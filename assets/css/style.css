@@ -1,0 +1,303 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root{
+    --cor-principal:#FFF;
+    --cor-secundaria:#000000;
+    --fonte-principal: "Rubik", sans-serif;
+    --fonte-secundaria:'Montserrat', sans-serif;
+    --fonte-size-s: 0.75em;
+    --fonte-size-m: 1em;
+    --fonte-size-l: 1.2em;
+    --fonte-size-xl: 1.5em;
+    --fonte-size-xxl: 2em;
+    --fonte-size-ultra: 3em;
+}
+
+@layer reset-css{
+    /* RESET CSS */
+    body{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background-color: black;
+        color: #FFF;
+    }
+
+    html{
+        list-style: none;
+        outline: none;
+        font-family: var(--fonte-principal);
+        scroll-behavior: smooth;
+    }
+
+    .img{
+        width: 100%;
+    }
+
+    .center{
+        text-align: center;
+    }
+}
+
+
+
+@layer desktop{
+    
+    @media screen and (min-width:1366px){
+
+        @layer css-principal{
+
+            .container{
+                width: 85%;
+                margin: 0 auto;
+            }
+
+            .flex{
+                display: flex;
+                justify-content: center;
+            }
+
+            .title-h1{
+                font-size: var(--fonte-size-ultra);
+                padding: 15px;
+            }
+
+            .title-h2{
+                font-size: var(--fonte-size-xxl);
+                padding: 15px;
+            }
+
+            .title-h3{
+                font-size: var(--fonte-size-l);
+                padding: 15px;
+            }
+
+            .fonte-size-s{
+                font-size: var(--fonte-size-s);
+            }
+
+            .cor-secundaria{
+                color: var(--cor-secundaria)
+            }
+
+            .bold{
+                font-weight:700;
+            }
+
+        }
+
+        @layer primeira-dobra{
+
+            .primeira-dobra{
+                background-color: bisque;
+            }
+
+        }
+
+        @layer segunda-dobra{
+
+            .segunda-dobra{
+                margin-top: -25px;
+            }
+
+            .banner-topo{
+                width: 85%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 25px;
+                padding: 10px;
+            }
+            .conteudo-segunda-dobra{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .roteiro{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+            }
+            .video{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+            }
+        }
+
+        @layer terceira-dobra{
+
+            .terceira-dobra{
+                background-image: url("../img/bg-terceira-dobra-min.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+        
+            .header-terceira-dobra{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding: 20px;
+            }
+            .cards-steps{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                align-items: center;
+                gap:15px;
+            }
+
+            
+            .video-steps{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 50px 0 50px 0;
+            }
+            .ctas-steps{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 125px;
+                gap: 15px;
+                cursor: pointer;
+            }
+
+            .animation:not(:hover){
+                scale: 1; 
+                transition: 1s;
+             }
+
+            .animation:hover{
+                scale: 1.1;
+                transition: 1s;
+                cursor: pointer;
+            }
+            
+
+          
+
+        }
+        }
+
+        @layer quarta-dobra{
+
+            .quarta-dobra{
+                background-image: url("../img/bg-ultima-dobra.png");
+                background-repeat: no-repeat;
+                background-size:cover;
+            }
+
+            .quarta-dobra .conatiner{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .header-formulario{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .formulario{
+                /* background: #ffffff19; */
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .img-formulario, .form{
+                width: 50%;
+            }
+
+            .input-form{
+                padding: 20px;
+                margin-top: 50px;
+                width: 85%;
+                background: #ffffff19;
+                border-radius: 20px;
+            }
+
+            .input-form-email{
+                padding: 20px;
+                margin-top: 20px;
+                width: 85%;
+                background: #ffffff19;
+                border-radius: 20px;
+            }
+
+            .comecar{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .logo-imersao{
+                width: 100%;
+                padding: 50px;
+                text-align: center;
+            }
+        }
+
+
+    }
+
+    @layer formulario{
+
+        input[type="text"],input[type="email"]{
+            background-color:#00000000;
+            color: #FFF;
+            font-weight: 800;
+            width: 85%;
+            margin-top: 25px;
+            border:none;
+            padding: 5px;
+        }
+
+        input[type="text"]::placeholder, input[type="email"]::placeholder{
+            font-size: 1.2em;
+            color: rgb(105, 105, 105);
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus{
+            padding: 15px;
+            transition: 1s;
+        }
+
+        .checkbox{
+            padding: 15px;
+            color: #6a6a6a;
+        }
+
+        
+        
+
+        input[type="checkbox"] {
+            cursor: pointer;
+          }
+
+        button{
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+          
+         
+    }
+
+    
+
+
+
+@layer mobile{
+    
+}
