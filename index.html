@@ -33,7 +33,7 @@
                         <p>Uma viagem inesquecível para <br> a fazenda-modelo Coffee ++</p>
                         <div class="banner-cta">
                             <a href="#roteiro"><img src="assets/img/btn-banner-topo-roteiro.png" alt="Botão Roteiro"></a>
-                        <a href="#formulario"><img src="assets/img/btn-banner-topo-inscrever.png" alt="WhatsApp"></a>
+                        <a href="#form"><img src="assets/img/btn-banner-topo-inscrever.png" alt="WhatsApp"></a>
                         </div>
                     </div>
                 </div>
@@ -96,8 +96,12 @@
                         </a>
                     </div>
                     <div class="ctas-steps mobile">
-                        <img src="assets/img/btn-01.png" alt="Primeiro Passo" width="225" height="50">
+                        <a href="#form">
+                            <img src="assets/img/btn-01.png" alt="Primeiro Passo" width="225" height="50">
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=5531991876553&text=Ol%C3%A1,%20gostaria%20de%20saber%20como%20fa%C3%A7o%20para%20participar%20da%20imers%C3%A3o!">
                         <img src="assets/img/btn-02.png" alt="Primeiro Passo" width="225" height="50">
+                    </a>
                     </div>
                 </div>
             </div>
@@ -113,7 +117,7 @@
                         <img src="assets/img/banner-form.png" alt="Primeiro Passo" class="img">
                     </div>
                     <div class="form">
-                        <form action="" id="form">
+                        <form action="https://hook.us1.make.com/x620pypcmpcbplh669u96kceh9qgy4fs" id="form" method="post" onsubmit="handleSubmit(event)">
                             
                                 <div class="inputs">
                                     <div class="input-form">
@@ -134,7 +138,7 @@
                             <div class="comecar">
                                 <div class="btn-comecar">
                                     <button type="submit">
-                                        <img src="assets/img/btn-comecar.png" alt="">
+                                        <img src="assets/img/btn-comecar.png" alt="Enviar">
                                     </button>
                                 </div>
                                 <div class="btn-comecar">
@@ -152,5 +156,28 @@
             </div>
         </section>
     </main>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+            
+            // Envie os dados do formulário para o webhook usando fetch ou outra biblioteca de sua escolha
+            fetch('https://hook.us1.make.com/x620pypcmpcbplh669u96kceh9qgy4fs', {
+                method: 'POST',
+                body: new FormData(document.getElementById('form'))
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirecionar o usuário após o envio bem-sucedido
+                    window.location.href = 'https://coffeemais.com';
+                } else {
+                    // Handle errors
+                    console.error('Erro ao enviar formulário');
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+        }
+    </script>
 </body>
 </html>
