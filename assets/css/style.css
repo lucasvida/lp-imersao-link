@@ -23,6 +23,7 @@
         overflow-x: hidden;
         background-color: black;
         color: #FFF;
+        scroll-behavior: smooth;
     }
 
     html{
@@ -42,51 +43,64 @@
 }
 
 
+@layer css-principal{
+
+    .container{
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .flex{
+        display: flex;
+        justify-content: center;
+    }
+
+    .title-h1{
+        font-size: var(--fonte-size-ultra);
+        padding: 15px;
+    }
+
+    .title-h2{
+        font-size: var(--fonte-size-xxl);
+        padding: 15px;
+    }
+
+    .title-h3{
+        font-size: var(--fonte-size-l);
+        padding: 15px;
+    }
+
+    .fonte-size-s{
+        font-size: var(--fonte-size-s);
+    }
+
+    .cor-secundaria{
+        color: var(--cor-secundaria)
+    }
+
+    .bold{
+        font-weight:700;
+    }
+
+    
+
+}
+
+
 
 @layer desktop{
     
-    @media screen and (min-width:1366px){
-
-        @layer css-principal{
-
-            .container{
-                width: 85%;
-                margin: 0 auto;
-            }
-
-            .flex{
-                display: flex;
-                justify-content: center;
-            }
-
-            .title-h1{
-                font-size: var(--fonte-size-ultra);
-                padding: 15px;
-            }
-
-            .title-h2{
-                font-size: var(--fonte-size-xxl);
-                padding: 15px;
-            }
-
-            .title-h3{
-                font-size: var(--fonte-size-l);
-                padding: 15px;
-            }
-
-            .fonte-size-s{
-                font-size: var(--fonte-size-s);
-            }
-
-            .cor-secundaria{
-                color: var(--cor-secundaria)
-            }
-
-            .bold{
-                font-weight:700;
-            }
-
+    @media screen and (min-width:1280px){
+        
+        .mobile{
+            display: none;
         }
+        
+        .desk{
+            display: flex;
+        }
+
+
 
         @layer primeira-dobra{
 
@@ -94,20 +108,66 @@
                 background-color: bisque;
             }
 
+            .banner-desktop {
+                width: 100%;
+                height:100vh ;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+              .banner-desktop video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+                width: 100%;
+              }
+              .banner-desktop .content {
+                position: relative;
+                z-index: 1;
+                max-width: 1000px;
+                margin: 0 auto;
+                text-align: center;
+                
+              }
+              .banner-desktop .content .title-h1 {
+                margin: 0;
+                padding: 0;
+                font-size: 5.5em;
+                text-transform: uppercase;
+                color: #BC9951;
+              }
+              .banner-desktop .content p {
+                font-size: 2em;
+                line-height: 1.5em;
+                color: #ffff;
+              }
+              .banner-desktop .content img {
+                width: 300px;
+                height: 75px;
+                padding: 25px;
+              }
+
+              .banner-cta{
+                margin-top: 150px;
+              }
+
+              .banner-mobile{
+                display: none;
+              }
+
         }
 
         @layer segunda-dobra{
 
-            .segunda-dobra{
-                margin-top: -25px;
-            }
-
+           
             .banner-topo{
                 width: 85%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-top: 25px;
+                margin-top: 50px;
                 padding: 10px;
             }
             .conteudo-segunda-dobra{
@@ -147,7 +207,6 @@
                 padding: 20px;
             }
             .cards-steps{
-                width: 100%;
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
@@ -163,6 +222,7 @@
                 margin: 50px 0 50px 0;
             }
             .ctas-steps{
+                width: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -190,62 +250,70 @@
 
         @layer quarta-dobra{
 
-            .quarta-dobra{
-                background-image: url("../img/bg-ultima-dobra.png");
-                background-repeat: no-repeat;
-                background-size:cover;
-            }
+            @layer quarta-dobra{
 
-            .quarta-dobra .conatiner{
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                .quarta-dobra{
+                    background-image: url("../img/bg-ultima-dobra.png");
+                    background-repeat: no-repeat;
+                    background-size:cover;
+                }
+    
+                .quarta-dobra .conatiner{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .header-formulario{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+    
+                .formulario{
+                    /* background: #ffffff19; */
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                }
+    
+                .img-formulario, .form{
+                    width: 50%;
+                }
+    
+                .input-form{
+                    padding: 20px;
+                    margin-top: 50px;
+                    width: 85%;
+                    background: #ffffff19;
+                    border-radius: 20px;
+                }
+    
+                .input-form-email{
+                    padding: 20px;
+                    margin-top: 20px;
+                    width: 85%;
+                    background: #ffffff19;
+                    border-radius: 20px;
+                }
+    
+                .comecar{
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+    
+                .logo-imersao{
+                    width: 100%;
+                    padding: 50px;
+                    text-align: center;
+                }
             }
-            .header-formulario{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-            }
+    
+    
+        
 
-            .formulario{
-                /* background: #ffffff19; */
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-            }
-
-            .img-formulario, .form{
-                width: 50%;
-            }
-
-            .input-form{
-                padding: 20px;
-                margin-top: 50px;
-                width: 85%;
-                background: #ffffff19;
-                border-radius: 20px;
-            }
-
-            .input-form-email{
-                padding: 20px;
-                margin-top: 20px;
-                width: 85%;
-                background: #ffffff19;
-                border-radius: 20px;
-            }
-
-            .comecar{
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center;
-            }
-
-            .logo-imersao{
-                width: 100%;
-                padding: 50px;
-                text-align: center;
-            }
+           
         }
 
 
@@ -257,7 +325,7 @@
             background-color:#00000000;
             color: #FFF;
             font-weight: 800;
-            width: 85%;
+            width: 100%;
             margin-top: 25px;
             border:none;
             padding: 5px;
@@ -300,4 +368,266 @@
 
 @layer mobile{
     
+    @media screen and (max-width:600px){
+        .mobile{
+            display: block;
+        }
+
+        .desk{
+            display:none;
+        }
+
+        .container{
+         width: 100%;
+        }
+
+        video{
+            width: 100%;
+        }
+
+    @layer primeira-dobra{
+        .banner-mobile {
+            display: block;
+            width: 100%;
+            height:100vh ;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .banner-mobile video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+          }
+          .banner-mobile .content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            
+          }
+          .banner-mobile .content .title-h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 5.5em;
+            text-transform: uppercase;
+            color: #BC9951;
+          }
+          .banner-mobile .content p {
+            font-size: 1.5em;
+            line-height: 1.5em;
+            color: #ffff;
+          }
+          .banner-mobile .content img {
+            width: 225px;
+            height: 50px;
+            padding: 15px;
+          }
+          .banner-desktop{
+            display: none;
+          }
+
+          .banner-cta{
+            margin-top: 100px;
+          }
+    }
+
+    @layer segunda-dobra{
+
+           
+        .banner-topo{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin-top: -25px;
+        }
+
+        .segunda-dobra .flex{
+            flex-direction: column;
+        }
+
+        .segunda-dobra video{
+            width: 100%;
+        }
+
+        .segunda-dobra img{
+            width: 100%;
+        }
+        .conteudo-segunda-dobra{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .roteiro{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        .video{
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            margin-top: -75px;
+        }
+
+        .roteiro-mob{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .roteiro-mob img{
+            margin-left: 15px;
+            
+        }
+    }
+
+    @layer terceira-dobra{
+
+        .terceira-dobra{
+            background-image: url("../img/bg-terceira-dobra-mob.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .header-terceira-dobra{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .cards-steps{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            gap:15px;
+        }
+
+        .video-steps{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: -15px 0 75px 0;
+        }
+        .conteudo-terceira-dobra .ctas-steps{
+            margin-left: 75px;
+            margin-top: -35px;
+            padding-bottom: 35px;
+        }
+
+        .animation:not(:hover){
+            scale: 1; 
+            transition: 1s;
+         }
+
+        .animation:hover{
+            scale: 1.1;
+            transition: 1s;
+            cursor: pointer;
+        }
+
+        .terceira-dobra .title-h1{
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .terceira-dobra .title-h2{
+            font-size: 2em;
+            text-align: center;
+        }
+    }
+
+    @layer quarta-dobra{
+        .quarta-dobra{
+            width: 100%;
+            background-image: url("../img/bg-ultima-dobra.png");
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+        .formulario{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .quarta-dobra .title-h3{
+            text-align: center;
+        }
+     
+
+        .img-formulario, .form{
+            width: 100%;
+        }
+
+        .input-form{
+            padding: 10px;
+            width: 75%;
+            background: #ffffff19;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        .input-form-email{
+            padding: 10px;
+            margin-top: 15px;
+            text-align: center;
+            width: 75%;
+            background: #ffffff19;
+            border-radius: 20px;
+        }
+
+        .comecar{
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-imersao{
+            width: 100%;
+            padding: 50px;
+            text-align: center;
+        }
+        .form{
+            width: 100%;
+        }
+
+        .inputs{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: -50px;
+        }
+
+        .btn-comecar{
+            margin-top: 50px;
+        }
+
+        .logo-imersao{
+            width: 100%;
+            margin-top: 50px;
+            padding: 0 0 50px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+    }
+
+    }
 }
